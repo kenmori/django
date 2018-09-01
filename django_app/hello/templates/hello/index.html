@@ -8,12 +8,27 @@
 </head>
 <body>
   <h1>{{title}}</h1>
-  <p>{{msg}}</p>
-  <form action="{% url 'form' %}" method="post">
-    {% csrf_token %}
-    <label for="msg">message: </label>
-    <input id="msg" type="text" name="msg">
-    <input type="submit" value="click">
-  </form>
+  <p>{{message | safe }}</p>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>MALL</th>
+      <th>AGE</th>
+      <th>BIRTHDAY</th>
+    </tr>
+    {% for item in data %}
+    <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>
+        {% if item.gender == False %}male{% endif %}
+        {% if item.gender == True %}female{% endif %}</td>
+      <td>{{item.mail}}</td>
+      <td>{{item.age}}</td>
+      <td>{{item.birthday}}</td>
+    </tr>
+    {% endfor%}
+  </table>
 </body>
 </html>
