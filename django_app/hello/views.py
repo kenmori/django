@@ -18,7 +18,7 @@ def index(request):
         params['data'] = [item]
         params['form'] = HelloForm(request.POST)
     else:
-        params['data'] = Friend.objects.all()
+        params['data'] = Friend.objects.all().values('id', 'name')
     return render(request, 'hello/index.html', params)
 
 def next(request):

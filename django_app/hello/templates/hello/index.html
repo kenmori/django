@@ -15,6 +15,16 @@
       {{ form.as_table }}
     </form>
   </table>
+  <p>{{data}}</p>
+  <br/>
+  <table>
+    {% for item in data %}
+    <tr>
+      <td>{{item}}</td>
+    </tr>
+    {% endfor%}
+  </table>
+  <br/>
   <table>
     <tr>
       <th>ID</th>
