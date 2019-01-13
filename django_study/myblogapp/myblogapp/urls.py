@@ -17,9 +17,15 @@ Including another URLconf
 from django.contrib import admin
 
 from django.urls import path, include
-
+from django.conf.urls.static import static
+from django.conf import settings
+from posts import views
 
 urlpatterns = [
-    path('posts/', include(('posts.urls','index'),)),
+    path('posts/', include(('posts.urls', 'index'),)),
+    path('posts/<int:post_id>', views.post_detail),
     path('admin/', admin.site.urls)
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# +staticでurlの設置とどこに保持しているかを決める
+# static(アドレスの設置, 静的ファイルの一番上の階層をどこに置くのか)
