@@ -5,6 +5,18 @@
   <body>
     <h1>ようこそモリタのブログへ</h1>
     <h2>詳細ページです</h2>
-    {{ post.id }}{{ post.title }} {{ post.body }}
+    {{ post.id }} <br />
+    <br />
+    <br />
+    {{ post.published }}
+
+    <br />
+    <br />
+    {{ post.title }}
+
+    <br />
+    <br />
+
+    {{ post.body }} <img src="{{ post.image.url }}" /> <br />
   </body>
 </html>
