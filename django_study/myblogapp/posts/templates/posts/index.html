@@ -3,6 +3,8 @@
     <title>投稿一覧</title>
   </head>
   <body>
-    <div>ここは投稿一覧のページです</div>
+    <h1>ようこそモリタのブログへ</h1>
+    <h2>最新の投稿</h2>
+    {% for post in posts.all %} {{ post.title }} {% endfor %}
   </body>
 </html>
