@@ -23,7 +23,7 @@ from posts import views
 
 urlpatterns = [
     path('posts/', include(('posts.urls', 'index'),)),
-    path('posts/<int:post_id>', views.post_detail),
+    path('posts/<int:post_id>/', views.post_detail, name="post_detail"),
     path('admin/', admin.site.urls)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
